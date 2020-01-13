@@ -1,0 +1,54 @@
+
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="persons" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let person"> {{person.name}} </td>
+    </ng-container>
+            
+    <ng-container matColumnDef="telephone">
+        <th mat-header-cell *matHeaderCellDef> Telephone </th>
+        <td mat-cell *matCellDef="let person"> {{person.telephone}} </td>
+    </ng-container>
+            
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>E-mail</th>
+        <td mat-cell *matCellDef="let person"> {{person.email}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef> State </th>
+        <td mat-cell *matCellDef="let person"> {{person.state}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let person"> {{person.city}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let person" class="action-link"> 
+            <button [routerLink]="[ '../../', 'person' , person.id,  'edit']" mat-icon-button aria-label="Edit">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="onDelete(person)" mat-icon-button aria-label="Delete">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+    
+<button class="create-new" mat-raised-button color="primary" routerLink="../new">Create new</button>
+<!--
+<div *ngFor="let person of persons">
+    <button mat-raised-button color="primary">Primary</button>
+</div>
+-->

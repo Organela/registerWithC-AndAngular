@@ -1,0 +1,22 @@
+<form [formGroup]="personForm" (ngSubmit)="save()">
+    <mat-form-field class="example-full-width">
+        <input id="name" class="form-control" matInput placeholder="Name" formControlName="name">
+        <div *ngIf="personForm.controls.name.invalid && (personForm.controls.name.dirty || personForm.controls.name.touched)" class="alert alert-danger">
+            <div *ngIf="personForm.controls.name.errors.required">Name is required.</div>
+            <div *ngIf="personForm.controls.name.errors.minlength">Name must be at least 4 characters long.</div>
+        </div>
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Telephone" formControlName="telephone">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="E-mail" formControlName="email">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="State" formControlName="state">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="City" formControlName="city">
+    </mat-form-field><br>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
