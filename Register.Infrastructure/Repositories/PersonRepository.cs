@@ -6,12 +6,12 @@ namespace Register.Infrastructure.Repositories
 {
     public class PersonRepository : IPersonRepository
     {
-        public IList<Person> Create()
+        public void Add(Person person)
         {
             throw new System.NotImplementedException();
         }
 
-        public IList<Person> Delete()
+        public void Delete(int id)
         {
             throw new System.NotImplementedException();
         }
@@ -24,17 +24,17 @@ namespace Register.Infrastructure.Repositories
             };
         }
 
-        public IList<Person> GetById()
+        public Person GetById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public IList<Person> Save()
+        public void Save()
         {
             throw new System.NotImplementedException();
         }
 
-        public IList<Person> Update()
+        public void Update(Person person)
         {
             throw new System.NotImplementedException();
         }

@@ -6,11 +6,11 @@ namespace Register.Domain.Repositories
     public interface IPersonRepository
     {
         IList<Person> GetAll();
-        IList<Person> GetById();
-        IList<Person> Save();
-        IList<Person> Update();
-        IList<Person> Create();
-        IList<Person> Delete();
+        Person GetById(int id);
+        void Save();
+        void Update(Person person);
+        void Add(Person person);
+        void Delete(int id);
 
     }
 }
