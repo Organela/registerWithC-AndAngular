@@ -46,15 +46,15 @@ export class PersonService {
         return of(this.persons.find(p => p.id === id));
     }
 
-    save(person: Person) {
+    save(person: Person): Observable<Person> {
         if (person.id) {
-            this.updatePerson(person);
-        } else {
-            this.createPerson(person);
+            return this.updatePerson(person);
         }
+
+        return this.createPerson(person);
     }
 
-    updatePerson(person: Person) {
+    updatePerson(person: Person): Observable<Person> {
         let index = 0;
 
         this.persons.forEach(p => {
@@ -64,11 +64,16 @@ export class PersonService {
             }
             index++;
         });
+
+        return of({});
     }
 
-    createPerson(person: Person) {
+    createPerson(person: Person): Observable<Person> {
+        /*
         person.id = this.getLastId() + 1;
         this.persons.push(person);
+        */
+       return this.http.post<Person>('api/persons', person);
     }
 
     getLastId(): number {

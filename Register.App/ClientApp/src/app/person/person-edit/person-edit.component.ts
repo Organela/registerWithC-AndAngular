@@ -38,7 +38,7 @@ export class PersonEditComponent {
   }
 
   save() {
-    this.personService.save(this.personForm.value);
-    this.router.navigate(['person', 'list']);
+    this.personService.save(this.personForm.value)
+    .subscribe( () => this.router.navigate(['person', 'list']));
   }
 }

@@ -24,7 +24,6 @@ namespace Register.App.Controllers
         public IActionResult Get()
         {
             var persons = PersonRepository.GetAll();
-            
             return Ok(persons);
         }
 
@@ -60,22 +59,13 @@ namespace Register.App.Controllers
         public IActionResult Post(Person person)
         {
             PersonRepository.Add(person);
-
-            var response = Request.CreateResponse<Person>(
-                HttpStatusCode.Created,
-                person);
-
-            var uri = Url.Link("DefaultApi", new { id = person.Id });
-            response.Headers.Location = new Uri(uri);
-
-            return Ok(response);
-
+            return Ok(CreatedAtAction(nameof(person), new { id = person.Id }, person));
         }
 
         [HttpPut("{id}")]
         public IActionResult Put(int id, Person person)
         {
-           if (PersonRepository.GetById(id) == null)
+            if (PersonRepository.GetById(id) == null)
             {
                 return Ok(NotFound());
             }
