@@ -1,8 +1,5 @@
 ﻿using FluentNHibernate.Mapping;
 using Register.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Register.Infrastructure.Mappings
 {
@@ -11,7 +8,7 @@ namespace Register.Infrastructure.Mappings
         public PersonMap()
         {
             Table("Person");
-            Id(x => x.Id, "Id").GeneratedBy.Identity().UnsavedValue(0);
+            Id(x => x.Id);
             Map(x => x.Name);
         }
     }

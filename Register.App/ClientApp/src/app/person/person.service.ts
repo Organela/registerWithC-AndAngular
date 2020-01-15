@@ -7,32 +7,8 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class PersonService {
-    private persons: Person[] = [
-        {
-            id: 2,
-            name: 'Naruto',
-            telephone: '799',
-            email: 'naruto@gmail.com',
-            state: 'RJ',
-            city: 'Niterói'
-        },
-        {
-            id: 9,
-            name: 'André',
-            telephone: '699',
-            email: 'andre@gmail.com',
-            state: 'RJ',
-            city: 'Niterói'
-        },
-        {
-            id: 12,
-            name: 'Bruna',
-            telephone: '299',
-            email: 'bruna@gmail.com',
-            state: 'RJ',
-            city: 'Niterói'
-        }
-    ];
+
+    //const personsUrl = 'api/persons';
 
     constructor(private readonly http: HttpClient) {
 
@@ -55,24 +31,10 @@ export class PersonService {
     }
 
     updatePerson(person: Person): Observable<Person> {
-        let index = 0;
-
-        this.persons.forEach(p => {
-            if (p.id === person.id) {
-                this.persons[index] = person;
-                return;
-            }
-            index++;
-        });
-
-        return of({});
+        return this.http.put<Person>('api/persons', person);
     }
 
     createPerson(person: Person): Observable<Person> {
-        /*
-        person.id = this.getLastId() + 1;
-        this.persons.push(person);
-        */
        return this.http.post<Person>('api/persons', person);
     }
 
@@ -87,11 +49,6 @@ export class PersonService {
     }
 
     deletePerson(person: Person) {
-        if (this.persons.find(p => p.id === person.id)) {
-            console.warn('deletePerson' + person.id);
-            console.warn(this.persons.indexOf(person));
-            this.persons.splice(this.persons.indexOf(person), 1);
-        }
-        return this.persons;
+      return this.http.delete<Person>('api/persons', person);
     }
 }

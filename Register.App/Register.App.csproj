@@ -33,9 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Register.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Register_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

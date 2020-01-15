@@ -9,6 +9,7 @@ C:\Users\andre.cunha\source\repos\Register\Register.Domain\obj\Debug\netstandard
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\bin\Debug\netstandard2.0\Register.Domain.deps.json
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\bin\Debug\netstandard2.0\Register.Domain.dll
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\bin\Debug\netstandard2.0\Register.Domain.pdb
+C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\obj\Debug\netstandard2.0\Register.Domain.csprojAssemblyReference.cache
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\obj\Debug\netstandard2.0\Register.Domain.AssemblyInfoInputs.cache
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\obj\Debug\netstandard2.0\Register.Domain.AssemblyInfo.cs
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Domain\obj\Debug\netstandard2.0\Register.Domain.dll

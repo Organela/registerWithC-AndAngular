@@ -9,6 +9,9 @@ C:\Users\andre.cunha\source\repos\Register\Register.Infrastructure\bin\Debug\net
 C:\Users\andre.cunha\source\repos\Register\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.csproj.CopyComplete
 C:\Users\andre.cunha\source\repos\Register\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.dll
 C:\Users\andre.cunha\source\repos\Register\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.pdb
+C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Infrastructure.deps.json
+C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Infrastructure.dll
+C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Infrastructure.pdb
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Domain.dll
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Domain.pdb
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.csprojAssemblyReference.cache
@@ -17,6 +20,3 @@ C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infras
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.csproj.CopyComplete
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.dll
 C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\obj\Debug\netstandard2.0\Register.Infrastructure.pdb
-C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Infrastructure.deps.json
-C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Infrastructure.dll
-C:\Users\andre.cunha\Documents\Projetos\registerWithC-AndAngular\Register.Infrastructure\bin\Debug\netstandard2.0\Register.Infrastructure.pdb
