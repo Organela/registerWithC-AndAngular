@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 import { PersonService } from '../person.service';
 import { Person } from '../person.model';
+import { findLast } from '@angular/compiler/src/directive_resolver';
 
 @Component({
   selector: 'app-person-list',
@@ -19,20 +20,22 @@ export class PersonListComponent implements OnInit {
     this.persons.filter = filterValue.trim().toLowerCase();
   }
   constructor(readonly personService: PersonService) {
-
-
-    personService.getAll().subscribe(persons => {
-      this.persons = new MatTableDataSource(persons);
-    });
-
-
+    this.load();
   }
 
   ngOnInit() {
   }
 
-  onDelete(person: Person) {
-    this.persons = new MatTableDataSource(this.personService.deletePerson(person));
+  load() {
+    this.personService.getAll().subscribe(persons => {
+      this.persons = new MatTableDataSource(persons);// This persons agora tem os valores das persons do Banco
+    });
+
   }
 
+  onDelete(person: Person) {
+    this.personService.deletePerson(person).subscribe(() => {
+      this.load();// Pensar em uma forma de deletar manualmente o person no client side - Método find?
+    });
+  }
 }

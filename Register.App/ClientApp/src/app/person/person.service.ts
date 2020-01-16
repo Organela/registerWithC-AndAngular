@@ -19,7 +19,7 @@ export class PersonService {
     }
 
     getById(id: number): Observable<Person> {
-        return of(this.persons.find(p => p.id === id));
+        return this.http.get<Person>('api/persons/${id}');
     }
 
     save(person: Person): Observable<Person> {
@@ -31,24 +31,18 @@ export class PersonService {
     }
 
     updatePerson(person: Person): Observable<Person> {
-        return this.http.put<Person>('api/persons', person);
+        return this.http.put<Person>('api/persons/${person.id}', person);
     }
 
     createPerson(person: Person): Observable<Person> {
-       return this.http.post<Person>('api/persons', person);
+        return this.http.post<Person>('api/persons', person);
     }
 
     getLastId(): number {
-        let max = 0;
-        this.persons.forEach(p => {
-            if (max < p.id) {
-                max = p.id;
-            }
-        });
-        return max;
+        return 1;
     }
 
-    deletePerson(person: Person) {
-      return this.http.delete<Person>('api/persons', person);
+    deletePerson(person: Person): Observable<Person> {
+          return this.http.delete<Person>('api/persons/${person.id}');
     }
 }
