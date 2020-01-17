@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using Register.Domain.Entities;
 using Register.Domain.Repositories;
+using Register.Domain.Services;
 
 namespace Register.App.Controllers
 {
@@ -50,7 +51,7 @@ namespace Register.App.Controllers
                 NotFound();
             }
 
-            PersonRepository.Delete(id);
+            PersonRepository.Delete(person);
 
             return Ok();
         }
@@ -58,7 +59,7 @@ namespace Register.App.Controllers
         [HttpPost]
         public IActionResult Post(Person person)
         {
-            PersonRepository.Add(person);
+            new PersonRegistrationService(PersonRepository).Register(person);
             return Ok(CreatedAtAction(nameof(person), new { id = person.Id }, person));
         }
 

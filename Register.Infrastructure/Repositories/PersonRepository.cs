@@ -28,17 +28,21 @@ namespace Register.Infrastructure.Repositories
             }
         }
 
-        public void Delete(int id)
+        public void Delete(Person person)
         {
-            throw new System.NotImplementedException();
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                session.Delete(person);
+                session.BeginTransaction().Commit();
+            }
         }
 
         public Person GetById(int id)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
-                var employee = session.Get<Person>(id);
-                return employee;
+                var person = session.Get<Person>(id);
+                return person;
             }
         }
 
@@ -49,7 +53,11 @@ namespace Register.Infrastructure.Repositories
 
         public void Update(Person person)
         {
-            throw new System.NotImplementedException();
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                session.Update(person);
+                session.BeginTransaction().Commit();
+            }
         }
     }
 }

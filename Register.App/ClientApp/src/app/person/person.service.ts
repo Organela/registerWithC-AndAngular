@@ -19,7 +19,7 @@ export class PersonService {
     }
 
     getById(id: number): Observable<Person> {
-        return this.http.get<Person>('api/persons/${id}');
+        return this.http.get<Person>(`api/persons/${id}`);
     }
 
     save(person: Person): Observable<Person> {
@@ -31,7 +31,7 @@ export class PersonService {
     }
 
     updatePerson(person: Person): Observable<Person> {
-        return this.http.put<Person>('api/persons/${person.id}', person);
+        return this.http.put<Person>(`api/persons/${person.id}`, person);
     }
 
     createPerson(person: Person): Observable<Person> {
@@ -43,6 +43,6 @@ export class PersonService {
     }
 
     deletePerson(person: Person): Observable<Person> {
-          return this.http.delete<Person>('api/persons/${person.id}');
+          return this.http.delete<Person>(`api/persons/${person.id}`);
     }
 }

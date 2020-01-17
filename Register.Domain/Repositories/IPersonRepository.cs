@@ -10,7 +10,7 @@ namespace Register.Domain.Repositories
         void Save();
         void Update(Person person);
         void Add(Person person);
-        void Delete(int id);
+        void Delete(Person person);
 
     }
 }
