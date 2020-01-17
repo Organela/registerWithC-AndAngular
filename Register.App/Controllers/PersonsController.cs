@@ -59,8 +59,14 @@ namespace Register.App.Controllers
         [HttpPost]
         public IActionResult Post(Person person)
         {
-            new PersonRegistrationService(PersonRepository).Register(person);
-            return Ok(CreatedAtAction(nameof(person), new { id = person.Id }, person));
+            if(new PersonRegistrationService(PersonRepository).Register(person))
+            {
+                return Ok(CreatedAtAction(nameof(person), new { id = person.Id }, person));
+            }
+            else
+            {
+                return Ok(NotFound());
+            }
         }
 
         [HttpPut("{id}")]
