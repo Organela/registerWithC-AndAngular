@@ -7,10 +7,9 @@ namespace Register.Domain.Repositories
     {
         IList<Person> GetAll();
         Person GetById(int id);
-        void Save();
+        void Save(Person person);
         void Update(Person person);
-        void Add(Person person);
+        void Create(Person person);
         void Delete(Person person);
-
     }
 }

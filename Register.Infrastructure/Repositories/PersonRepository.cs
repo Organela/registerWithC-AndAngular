@@ -8,7 +8,7 @@ namespace Register.Infrastructure.Repositories
 {
     public class PersonRepository : IPersonRepository
     {
-        public void Add(Person person)
+        public void Create(Person person)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -46,9 +46,14 @@ namespace Register.Infrastructure.Repositories
             }
         }
 
-        public void Save()
+        public void Save(Person person)
         {
-            throw new System.NotImplementedException();
+            if (person.Id == 0)
+            {
+                Create(person);
+            }
+
+            Update(person);
         }
 
         public void Update(Person person)

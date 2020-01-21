@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Register.Domain.Entities;
 using Register.Domain.Repositories;
 using Register.Domain.Services;
+using Register.Domain.Specifications;
 
 namespace Register.App.Controllers
 {
@@ -59,14 +60,12 @@ namespace Register.App.Controllers
         [HttpPost]
         public IActionResult Post(Person person)
         {
-            if(new PersonRegistrationService(PersonRepository).Register(person))
+            if (new PersonRegistrationService(PersonRepository).Register(person))
             {
-                return Ok(CreatedAtAction(nameof(person), new { id = person.Id }, person));
+                return Ok(CreatedAtAction(nameof(Person), new { id = person.Id }, person));
             }
-            else
-            {
-                return Ok(NotFound());
-            }
+
+            return StatusCode((int)HttpStatusCode.UnprocessableEntity, new { });
         }
 
         [HttpPut("{id}")]
