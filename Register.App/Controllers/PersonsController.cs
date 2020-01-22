@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 
@@ -7,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Register.Domain.Entities;
 using Register.Domain.Repositories;
 using Register.Domain.Services;
-using Register.Domain.Specifications;
 
 namespace Register.App.Controllers
 {
@@ -60,12 +60,14 @@ namespace Register.App.Controllers
         [HttpPost]
         public IActionResult Post(Person person)
         {
-            if (new PersonRegistrationService(PersonRepository).Register(person))
+            var validationResult = new PersonRegistrationService(PersonRepository).Register(person);
+
+            if (validationResult.Any())
             {
-                return Ok(CreatedAtAction(nameof(Person), new { id = person.Id }, person));
+                return StatusCode((int)HttpStatusCode.UnprocessableEntity, validationResult);
             }
 
-            return StatusCode((int)HttpStatusCode.UnprocessableEntity, new { });
+            return Ok(CreatedAtAction(nameof(Person), new { id = person.Id }, person));
         }
 
         [HttpPut("{id}")]
